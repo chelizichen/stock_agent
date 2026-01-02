@@ -1,0 +1,7 @@
+# 股票Agent配置文件
+ai:
+  provider: "xiaomimimo"
+  api_key: "123456"
+  base_url: "https://api.xiaomimimo.com/v1"
+  model_name: "xiaomimimo/mimo-v2-flash"
+
