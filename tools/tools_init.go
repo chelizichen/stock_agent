@@ -34,6 +34,13 @@ func InitTools(g *genkit.Genkit) []ai.ToolRef {
 		MarkdownExport,
 	)
 
-	toolList := []ai.ToolRef{searchNewsTool, xqSearchStockTool, analyzeNewsTool, markdownExportTool}
+	analyzeInputTool := genkit.DefineTool[AnalyzeInput, string](
+		g,
+		"analyzeInput",
+		"分析用户输入，返回股票列表",
+		Analyze,
+	)
+
+	toolList := []ai.ToolRef{searchNewsTool, xqSearchStockTool, analyzeNewsTool, markdownExportTool, analyzeInputTool}
 	return toolList
 }

@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 
+	"stock_agent/config"
 	"stock_agent/tools"
 
 	"github.com/firebase/genkit/go/ai"
@@ -19,7 +20,7 @@ func main() {
 	ctx := context.Background()
 
 	// 加载配置文件
-	config, err := LoadConfig("")
+	config, err := config.LoadConfig("")
 	if err != nil {
 		log.Fatalf("加载配置失败: %v", err)
 	}
@@ -31,7 +32,7 @@ func main() {
 			APIKey:   config.AI.APIKey,
 			BaseURL:  config.AI.BaseURL,
 		},
-	))
+	)) 
 
 	// 设置全局genkit实例（供tools使用）
 	tools.SetGenkitInstance(g)
