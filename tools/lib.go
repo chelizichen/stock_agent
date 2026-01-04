@@ -29,7 +29,6 @@ func getBrowser() (*rod.Browser, error) {
 	if err != nil {
 		return nil, fmt.Errorf("启动浏览器失败: %v", err)
 	}
-	log.Printf("浏览器URL: %s", browserURL)
 	browser := rod.New().ControlURL(browserURL)
 	if err := browser.Connect(); err != nil {
 		return nil, fmt.Errorf("连接浏览器失败: %v", err)

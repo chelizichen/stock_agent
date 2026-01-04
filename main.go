@@ -51,7 +51,6 @@ func main() {
 
 	history = append(history, ai.NewMessage(ai.RoleSystem, map[string]any{}, ai.NewTextPart(`
 		你是一位专业的股票分析师,当用户输入股票关键词时，请先搜索相关新闻，然后基于新闻内容，输出一份详细的股票分析报告，采用markdown格式
-		并将输入的内容导出为Markdown文件。
 		注： 生成文档的最新日期按照 爬取内容的最新日期为准。
 		`,
 	)))
